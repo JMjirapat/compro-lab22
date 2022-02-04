@@ -1,4 +1,4 @@
-// Please include header (lab22.h) here.
+#include "lab22.h"
 
 int main(){
 	srand(time(0));
@@ -20,9 +20,9 @@ int main(){
 		player_action = toupper(player_action);
 		if(player_action == 'E') break; 
 		
-		int temp = rand()%3;
-		if(temp <= 1) monster_action = 'A';
-		else if(temp == 2) monster_action = 'G';
+		int temp = rand()%3; // การเลือก monster == 0 1 2
+		if(temp <= 1) monster_action = 'A'; // 2/3
+		else if(temp == 2) monster_action = 'G'; // 1/3
 		
 		if(player_action == 'G') hero.guard();
 		if(monster_action == 'G') mons.guard();
